@@ -1,6 +1,10 @@
 <div class="jumbotron center">
 	<h1>Make the tasks done</h1>
 	<p>The todo-list app synced with Slack</p>
-	<button type="button" class="btn btn-secondary">Login</button>
-	<button type="button" class="btn btn-primary">Signup</button>
+	<% if user_signed_in? %>
+		#do something
+	<% else %>
+		<%= link_to "Login", new_user_session_path, class: "btn btn-secondary" %>
+		<%= link_to "Signup", new_user_registration_path, class: "btn btn-primary" %>
+	<% end %>
 </div>	
